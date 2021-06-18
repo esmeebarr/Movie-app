@@ -1,8 +1,15 @@
-import React from "react";
-import "./SearchBar.module.scss";
+import React, { Component } from "react";
+import "./SearchBar.css";
 
-const SearchBar = () => {
-  return <div></div>;
-};
+export default class SearchBar extends Component {
+  render() {
+    const { type, placeholder, name, updateSearch, handleChange, style } =
+      this.props;
 
-export default SearchBar;
+    return (
+      <div className="searchBar" style={style}>
+        <input type={type} name={name} placeholder={placeholder} />
+      </div>
+    );
+  }
+}

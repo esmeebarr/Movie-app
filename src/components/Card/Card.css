@@ -1,0 +1,16 @@
+.card {
+  height: 90%;
+  cursor: pointer;
+}
+
+.year {
+  font-family: georgia, sans-serif;
+  font-size: 1em;
+  border-bottom: 2px solid black;
+}
+
+.title {
+  font-family: Georgia, sans-serif;
+  font-size: 2em;
+  letter-spacing: -2px;
+}
