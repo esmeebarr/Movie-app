@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./CardList.css";
 import Card from "../Card/Card";
 
-export default class CardList extends Component {
+CardList = (props) => {
   getMovies = () => {
     const { movies, fetchInfo } = this.props;
     return movies.map((movie) => (
@@ -17,11 +17,11 @@ export default class CardList extends Component {
       : "Sorry there are no results to display...";
   };
 
-  render() {
-    return (
-      <div className="cardList">
-        {this.props.movies ? this.getMovies() : this.getErrorMsg()}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="cardList">
+      {this.props.movies ? this.getMovies() : this.getErrorMsg()}
+    </div>
+  );
+};
+
+export default CardList;
