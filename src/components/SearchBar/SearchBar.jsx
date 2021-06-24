@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SearchBar.css";
 
-SearchBar = () => {
+const SearchBar = () => {
   const { type, placeholder, name, updateSearch, handleChange, style } =
     this.props;
 

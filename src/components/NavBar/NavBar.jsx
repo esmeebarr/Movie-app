@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./NavBar.css";
 import SearchBar from "../SearchBar/SearchBar";
 
-NavBar = () => {
+const NavBar = () => {
   const { updateSearch, handleChange } = this.props;
   return (
     <nav className="navBar">

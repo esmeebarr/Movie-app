@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Modal.css";
 
-Modal = () => {
+const Modal = () => {
   const { Title, Plot, Runtime, Genre, Poster } = this.props.currentMovie;
 
   return (

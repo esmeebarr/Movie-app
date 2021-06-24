@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import "./CardList.css";
 import Card from "../Card/Card";
 
-CardList = (props) => {
-  getMovies = () => {
+const CardList = (props) => {
+  const getMovies = () => {
     const { movies, fetchInfo } = this.props;
     return movies.map((movie) => (
       <Card key={movie.imdbID} movie={movie} fetchInfo={fetchInfo} />
     ));
   };
 
-  getErrorMsg = () => {
+  const getErrorMsg = () => {
     const { searchTerm } = this.props;
     return searchTerm.length < 1
       ? "Enter a title to search for a movie..."

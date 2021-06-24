@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import CardList from "./components/CardList/CardList";
 import Modal from "./components/Modal/Modal";
 
 import "./data/movies";
 
-export default class App extends Component {
-  state = {
+const App = () => {
+  const State = {
     movies: [],
     currentMovie: {},
     infoModal: false,
@@ -14,7 +14,7 @@ export default class App extends Component {
     searchYear: "",
   };
 
-  updateSearch = (query) => {
+  const updateSearch = (query) => {
     let key = "";
     let term = "";
 
@@ -28,13 +28,13 @@ export default class App extends Component {
     this.setState({ [key]: query.value });
   };
 
-  handleChange = (e) => {
+  const handleChange = (e) => {
     if (e.key === "Enter" || e.type === "click") {
       this.fetchMovies(this.state.searchTerm, this.state.searchYear);
     }
   };
 
-  fetchMovies = (searchTerm, searchYear) => {
+  const fetchMovies = (searchTerm, searchYear) => {
     const apiKey = "ed77a58";
 
     fetch(
@@ -45,7 +45,7 @@ export default class App extends Component {
       .catch((error) => console.log(error));
   };
 
-  fetchInfo = (id) => {
+  const fetchInfo = (id) => {
     fetch(`https://www.omdbapi.com/?i=${id}&apikey=ed77a58
     `)
       .then((response) => response.json())
@@ -53,15 +53,14 @@ export default class App extends Component {
       .catch((error) => console.log(error));
   };
 
-  closeModal = (e) => {
-    e.stopPropagation();
-    this.setState({ infoModal: false });
-  };
+  // const closeModal = (e) => {
+  //   e.stopPropagation();
+  //   this.setState({ infoModal: false });
+  // };
 
-  componentDidMount = () => this.fetchMovies("movie", "");
-
-  render() {
-    const { movies, searchTerm, infoModal, currentMovie } = this.state;
+  const componentDidMount = () => this.fetchMovies("movie", "");
+  {
+    const { movies, searchTerm, infoModal, currentMovie } = this.State;
     return (
       <>
         <NavBar
@@ -79,4 +78,5 @@ export default class App extends Component {
       </>
     );
   }
-}
+};
+export default App;
